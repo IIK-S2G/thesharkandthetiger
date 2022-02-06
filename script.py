@@ -7,6 +7,7 @@ import discord
 from discord.ext import commands
 
 load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 client = commands.Bot(command_prefix="!s2g")
 
 @client.event
@@ -16,4 +17,5 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print("New message has come")
-    
+
+client.run(TOKEN)
