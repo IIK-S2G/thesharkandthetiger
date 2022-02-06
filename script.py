@@ -17,5 +17,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print("New message has come")
+    ctx = client.get_context(message)
+    if message.content == 'Hello':
+        await ctx.send("Hello to you too!")
 
 client.run(TOKEN)
